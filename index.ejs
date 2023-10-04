@@ -1,0 +1,274 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat System</title>
+    <style>
+        body {
+            background-color:  #FFE9E1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            background-color: #451952;
+            color: #fff;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .chats {
+            padding: 20px;
+        }
+        
+        .chat {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+            position: relative;
+        }
+        
+        .chat p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .chat strong {
+            font-weight: bold;
+        }
+        
+        .info {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .chat i {
+            color: #777;
+            font-style: italic;
+        }
+        
+        button {
+            background-color: #791558;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #451952;
+        }
+        
+        .chat:hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* Style the "New Chat" button */
+        .new-chat-button {
+            background-color: #451952;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        .new-chat-button:hover {
+            background-color: #791558;
+        }
+    </style>
+</head>
+<body>
+    <h3>Chatting System</h3>
+    <div class="container">
+        <form method="GET" action="/texts/new">
+            <button>New Chat</button>
+        </form>
+        <div class="chats">
+            <% for (let text of texts) { %>
+                <div class="chat">
+                    <p><strong>From:</strong> <%= text.from %></p>
+                  <br>  <p><strong>To:</strong> <%= text.to %></p>
+                  <br> 
+                  <div class="info">
+                        <p><strong>Message:</strong> <%= text.msg %></p>
+                    </div>
+                   
+                </div>
+                <p class><i>Sent on:</i> <%= text.created_at.toString().split(" ")[4]%><br></p>
+                <p>&nbsp;<%= text.created_at.toString().split(" ").slice(0,4).join(" ")%><br></p>
+
+            <form method="GET" action="/texts/<%=text._id%>/edit">
+                <button>Edit</button>
+            </form>
+            <br>
+            <form method="POST" action="/texts/<%=text._id%>?_method=DELETE">
+                <button>DELETE</button>
+            </form>
+            <% } %>
+           
+        </div>
+       
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat System</title>
+    <style>
+        body {
+            background-color: #FFE9E1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            background-color: #451952;
+            color: #fff;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .chats {
+            padding: 20px;
+        }
+        
+        .chat {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #fff;
+            position: relative;
+        }
+        
+        .chat p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .chat strong {
+            font-weight: bold;
+        }
+        
+        .info {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        .chat i {
+            color: #777;
+            font-style: italic;
+        }
+        
+        button {
+            background-color: #791558;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        button:hover {
+            background-color: #451952;
+        }
+        
+        .chat:hover {
+            background-color: #f0f0f0;
+        }
+        
+        /* Style the "New Chat" button */
+        .new-chat-button {
+            background-color: #451952;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        
+        .new-chat-button:hover {
+            background-color: #791558;
+        }
+    </style>
+</head>
+<body>
+    <h3>Chatting System</h3>
+    <div class="container">
+        <form method="GET" action="/texts/new">
+            <button class="new-chat-button">New Chat</button>
+        </form>
+        <div class="chats">
+            <% for (let text of texts) { %>
+                <div class="chat">
+                    <div>
+                        <p><strong>From:</strong> <%= text.from %></p>
+                        <p><strong>To:</strong> <%= text.to %></p>
+                        <div class="info">
+                            <p><strong>Message:</strong> <%= text.msg %></p>
+                        </div>
+                    </div>
+                    <div>
+                        <p><i>Sent on:</i> <%= text.created_at.toString().split(" ")[4]%></p>
+                        <p><i>&nbsp;<%= text.created_at.toString().split(" ").slice(0, 4).join(" ")%></i></p>
+                    </div>
+                    <div>
+                        <form method="GET" action="/texts/<%=text._id%>/edit">
+                            <button>Edit</button>
+                        </form>
+                        <br>
+                        <form method="POST" action="/texts/<%=text._id%>?_method=DELETE">
+                            <button>Delete</button>
+                        </form>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
+
