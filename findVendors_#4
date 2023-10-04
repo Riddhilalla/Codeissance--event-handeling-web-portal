@@ -10,41 +10,80 @@
             margin: 0;
             padding: 0;
         }
-
+    
         body {
             font-family: Arial, sans-serif;
             background-color: #FFE9E1;
             padding: 20px;
         }
-
+    
         h1 {
-            color: #79155B;
+            color: #451952;
             text-align: center;
         }
-
+    
+        h3 {
+            color: #79155B;
+            font-weight: bold;
+        }
+    
+        p {
+            color: #451952;
+            font-weight: bold;
+        }
+    
         /* Dropdown filter styles */
         select {
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius:7px;
             margin-right: 10px;
         }
-
+    
         /* List of items styles */
         ul {
             list-style-type: none;
             padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
-
+    
         li {
             background-color: #fff;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 15px;
             padding: 10px;
             margin: 10px 0;
+            width: calc(33.33% - 20px); /* Adjust width based on your design */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
+    
         /* Style for the Contact button */
+        .contact-button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    
+        .contact-button:hover {
+            background-color: #a15a8c;
+        }
+    
+        /* Style for the vendor images */
+        .vendor-image {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, scale 0.3s ease; /* Transitions for hover effect */
+        }
+    
+        /* Hover effect for vendor images */
+        .vendor-image:hover {
+            transform: translateY(-10px) scale(1.1); /* Lift and make the image bigger on hover */
+        }
+    
         .contact-button {
             display: inline-block;
             padding: 10px 20px;
@@ -55,17 +94,20 @@
             border-radius: 5px;
             margin-top: 10px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-
+    
         .contact-button:hover {
             background-color: #a15a8c;
         }
     </style>
+    
 </head>
 <body>
     <h1>Easy-Peasy Vendor Finder</h1>
     <br>
     <!-- Dropdown filters -->
+    <center>
     <select id="category-filter">
         <option value="all">All Categories</option>
         <option value="electronics">Wedding</option>
@@ -93,89 +135,75 @@
         <option value="4">4 Stars</option>
         <option value="3">3 Stars</option>
     </select>
-
+    </center>
     <!-- List of items (example) -->
     <ul id="item-list">
         <!-- Electronics Vendors -->
         <li data-category="electronics" data-price="low" data-location="new-york" data-rating="5">
-            <h3>Vendor 1A</h3>
-            <p>Specializes in .</p>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNESxlHYPRpQ0YzDJZ43KMzXf0cHqFey0fIrK5z=s1360-w1360-h1020" alt="Vendor 1 Image" class="vendor-image">
+            <h3>The Bandhan - relations for life</h3>
+            <p>Wedding planner in Thane, Maharashtra</p>
             <button class="contact-button" data-vendor="Vendor 1">Contact</button>
         </li>
+
         <li data-category="electronics" data-price="medium" data-location="los-angeles" data-rating="4">
-            <h3>Vendor 2A</h3>
-            <p>Offers a variety of .</p>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNC2VlCOzkNPvijaFxTfruebDutsMHVj0lMIUtc=s2560-w2560-h1206-rw" alt="Vendor 2 Image" class="vendor-image">
+            <h3>Midaas Events</h3>
+            <p>Wedding planner in Kandivali East</p>
             <button class="contact-button" data-vendor="Vendor 2">Contact</button>
         </li>
+
         <li data-category="electronics" data-price="high" data-location="chicago" data-rating="3">
-            <h3>Vendor 3A</h3>
-            <p>Specializes in .</p>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNMJBApJPhouMLIWs3qIuozEkG-tHLvK80XIulV=s2560-w2560-h1206-rw" alt="Vendor 3 Image" class="vendor-image">
+            <h3>My Event Factory .in</h3>
+            <p>Kharghar, Navi Mumbai</p>
             <button class="contact-button" data-vendor="Vendor 3">Contact</button>
-        </li>
-        <li data-category="electronics" data-price="medium" data-location="new-york" data-rating="4">
-            <h3>Vendor 4A </h3>
-            <p>Offers .</p>
-            <button class="contact-button" data-vendor="Vendor 4">Contact</button>
-        </li>
-        <li data-category="electronics" data-price="low" data-location="los-angeles" data-rating="5">
-            <h3>Vendor 5A </h3>
-            <p>Specializes in affordable electronics.</p>
-            <button class="contact-button" data-vendor="Vendor 5">Contact</button>
         </li>
 
         <!-- Clothing Vendors -->
         <li data-category="clothing" data-price="low" data-location="new-york" data-rating="4">
-            <h3>Vendor 1B </h3>
-            <p>Offers trendy clothing options.</p>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMNq1kHKXDEKXCUCV_MN9uvEy78ZDeUmcYvxjD2=s1360-w1360-h1020" alt="Vendor 4 Image" class="vendor-image">
+            <h3>PARTY ROCKERS</h3>
+            <p>Birthday Party planners in Lokpuram,Thane.</p>
             <button class="contact-button" data-vendor="Vendor 1">Contact</button>
         </li>
+
         <li data-category="clothing" data-price="high" data-location="los-angeles" data-rating="5">
-            <h3>Vendor 2B </h3>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOdfngmYGARbZYwu2qXTmDzTKCAsTCSewCwrrGA=s2560-w2560-h1206-rw" alt="Vendor 5 Image" class="vendor-image">
+            <h3>Eventzgraph</h3>
             <p>Specializes in luxury fashion.</p>
             <button class="contact-button" data-vendor="Vendor 2">Contact</button>
         </li>
+
         <li data-category="clothing" data-price="medium" data-location="chicago" data-rating="4">
-            <h3>Vendor 3B</h3>
-            <p>Offers a variety of clothing styles.</p>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipN4Ttb0KlQa-Q0GeZMS7eSVYQeDGdE9x5E971d7=s2560-w2560-h1206-rw" alt="Vendor 6 Image" class="vendor-image">
+            <h3>ASK The Event Associates</h3>
+            <p>Sanpada,Navi Mumbai</p>
             <button class="contact-button" data-vendor="Vendor 3">Contact</button>
-        </li>
-        <li data-category="clothing" data-price="medium" data-location="new-york" data-rating="3">
-            <h3>Vendor 4B</h3>
-            <p>Specializes in casual wear.</p>
-            <button class="contact-button" data-vendor="Vendor 4">Contact</button>
-        </li>
-        <li data-category="clothing" data-price="low" data-location="los-angeles" data-rating="4">
-            <h3>Vendor 5B</h3>
-            <p>Offers budget-friendly clothing options.</p>
-            <button class="contact-button" data-vendor="Vendor 5">Contact</button>
         </li>
 
         <!-- Books Vendors -->
         <li data-category="books" data-price="high" data-location="new-york" data-rating="5">
-            <h3>Vendor 1C</h3>
-            <p>Specializes in .</p>
+            <img src="https://lh3.googleusercontent.com/p/AF1QipPTANDzvnTTfA4iFEDwPW1LcnOVaEPTNoqRW82a=s1360-w1360-h1020" alt="Vendor 7 Image" class="vendor-image">
+            <h3>Wedding Stories</h3>
+            <p>Specializes in books.</p>
             <button class="contact-button" data-vendor="Vendor 1">Contact</button>
         </li>
+
         <li data-category="books" data-price="medium" data-location="los-angeles" data-rating="4">
-            <h3>Vendor 2C</h3>
-            <p>Offers a wide range of .</p>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipP9x7aZSKsBnWocNeVbl82wfMGU45Jzz-fjLfRT=w296-h168-n-k-no" alt="Vendor 8 Image" class="vendor-image">
+            <h3>Aj weeding and event</h3>
+            <p>7+ years of service</p>
             <button class="contact-button" data-vendor="Vendor 2">Contact</button>
         </li>
+
         <li data-category="books" data-price="low" data-location="chicago" data-rating="3">
-            <h3>Vendor 3C</h3>
-            <p>Specializes in .</p>
+            <img src="https://lh5.googleusercontent.com/p/AF1QipN3FVq2HpU3hMJYJdH_c4HWbAa_oTN7YZ1A0m3v=w231-h193-n-k-no-nu" alt="Vendor 9 Image" class="vendor-image">
+            <h3>A.L.S. Events - Event Planners and Organiser</h3>
+            <p>10+ years in business</p>
             <button class="contact-button" data-vendor="Vendor 3">Contact</button>
         </li>
-        <li data-category="books" data-price="high" data-location="new-york" data-rating="5">
-            <h3>Vendor 4C</h3>
-            <p>Offers a collection of .</p>
-            <button class="contact-button" data-vendor="Vendor 4">Contact</button>
-        </li>
-        <li data-category="books" data-price="medium" data-location="los-angeles" data-rating="4">
-            <h3>Vendor 5C</h3>
-            <p>Specializes in .</p>
-            <button class="contact-button" data-vendor="Vendor 5">Contact</button>
-        </li>
+        <!-- Add more vendors here -->
     </ul>
 
     <script>
