@@ -1,120 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Manager</title>
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0-beta3/css/all.min.css"
+        integrity="sha384-pzjw8f+ua9c6kzQz9LvFb2lnb1xUp5a4+OGpamoFVy38" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE9E1;
+        }
+
+        header {
+            margin-top: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #79155B;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            max-height: 400px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        select,
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #create-event-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-weight: bold;
+            background-color: #79155B;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 5px;
+           
+            margin-bottom: 2px;
+            
+        }
+
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin-bottom: 2px;
+            padding: 10px;
+        }
+
+        #event-form {
+            flex-basis: calc(50% - 10px);
+        
+        }
+
+        #calendar {
+            flex-basis: calc(50% - 10px);
+            
+            max-height: 437px;
+         
+            margin-bottom: 10px;
+      
+
+
+        }
+
+
+        @media (max-width: 768px) {
+
+            #event-form,
+            #calendar {
+                flex-basis: 100%;
+            }
+        }
+
+        footer {
+            background-color: #79155B;
+            padding: 18px;
+            /* Increase the padding to increase the height */
+            color: #ffe9e1;
+        }
+    </style>
 </head>
+
 <body>
-    <h1><center>Schedule Manager</center></h1>
+    <header>
+        <h1>
+            <center>Schedule Manager</center>
+        </h1>
+    </header>
 
-    <form id="event-form">
-        <label for="event-name">Event Name:</label>
-        <select id="event-name" required>
-            <option value="WEDDING">WEDDING</option>
-            <option value="BIRTHDAY">BIRTHDAY</option>
-            <option value="ANNIVERSARY">ANNIVERSARY</option>
-        </select><br><br>
+    <div class="container">
+        <form id="event-form">
+            <label for="event-name">
+                <H2>
+                    <CENTER>Create an Event</CENTER>
+                </H2>
+            </label>
+            <label for="event-venue">Categories</label>
+            <select id="event-name" required>
+                <option value="WEDDING">WEDDING</option>
+                <option value="BIRTHDAY">BIRTHDAY</option>
+                <option value="ANNIVERSARY">ANNIVERSARY</option>
+                <option value="CORPORATE">CORPORATE</option>
+                <option value="PARTY">PARTY</option>
+            </select><br><br>
 
-        <label for="event-venue">Event LOCATION:</label>
-        <select id="event-venue" required>
-            <option value="THANE">THANE</option>
-            <option value="MUMBAI">MUMBAI</option>
-            <option value="NAVI-MUMBAI">NAVI-MUMBAI</option>
-        </select><br><br>
+            <label for="event-venue">Event Location:</label>
+            <select id="event-venue" required>
+                <option value="THANE">THANE</option>
+                <option value="MUMBAI">MUMBAI</option>
+                <option value="NAVI-MUMBAI">NAVI-MUMBAI</option>
+            </select><br><br>
 
-        <label for="event-date">Event Date:</label>
-        <input type="date" id="event-date" required><br><br>
+            <label for="event-date">Event Date:</label>
+            <input type="date" id="event-date" required style="width: 95%;"><br><br>
 
-        <label for="event-time">Event Time:</label>
-        <select id="event-time" required>
-            <option value="09:00:00">9:00 AM</option>
-            <option value="10:00:00">10:00 AM</option>
-            <option value="11:00:00">11:00 AM</option>
-            <option value="12:00:00">12:00 PM</option>
-            <option value="13:00:00">1:00 PM</option>
-            <option value="14:00:00">2:00 PM</option>
-            <option value="15:00:00">3:00 PM</option>
-            <option value="16:00:00">4:00 PM</option>
-            <option value="17:00:00">5:00 PM</option>
-            <option value="18:00:00">6:00 PM</option>
-            <option value="19:00:00">7:00 PM</option>
-            <option value="20:00:00">8:00 PM</option>
-        </select><br><br>
+            <label for="event-time">Event Time:</label>
+            <select id="event-time" required>
+                <option value="09:00:00">9:00 AM</option>
+                <option value="12:00:00">12:00 PM</option>
+                <option value="15:00:00">3:00 PM</option>
+                <option value="19:00:00">6:00 PM</option>
+                <option value="20:00:00">9:00 PM</option>
+            </select><br><br>
 
-        <input type="submit" value="Create Event" id="create-event-button">
-    </form>
-
-    <div id="event-details">
-        <!-- Event details will be displayed here -->
+            <input type="submit" value="Create Event" id="create-event-button">
+        </form>
+        <div id="calendar"></div>
     </div>
-
-    <div id="calendar"></div>
-
-    <!-- Include FullCalendar JavaScript -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.js'></script>
 
     <script>
-        const calendarEl = document.getElementById('calendar');
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'timeGridWeek',
-            selectable: true,
-            select: function (info) {
-                // Handle the selection of a time slot
-                alert(`Selected time: ${info.startStr}`);
-            }
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendar');
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridWeek',
+                selectable: true,
+                slotDuration: '03:00:00', 
+                slotLabelInterval: '03:00:00', 
 
-        const createdEvents = [];
+                select: function (info) {
+                    
+                    alert(`Selected time: ${info.startStr}`);
+                }
+            });
 
-        calendar.render();
+            const createdEvents = [];
 
-        // Handle form submission
-        const eventForm = document.getElementById("event-form");
-        const createEventButton = document.getElementById("create-event-button");
+            calendar.render();
 
-        eventForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+           
+            const eventForm = document.getElementById("event-form");
+            const createEventButton = document.getElementById("create-event-button");
 
-            // Retrieve event details from the form
-            const eventName = document.getElementById("event-name").value;
-            const eventVenue = document.getElementById("event-venue").value;
-            const eventDate = document.getElementById("event-date").value;
-            const eventTime = document.getElementById("event-time").value;
+            eventForm.addEventListener("submit", function (e) {
+                e.preventDefault();
 
-            // Combine date and time to create a full datetime string
-            const eventDateTime = `${eventDate}T${eventTime}`;
+                
+                const eventName = document.getElementById("event-name").value;
+                const eventVenue = document.getElementById("event-venue").value;
+                const eventDate = document.getElementById("event-date").value;
+                const eventTime = document.getElementById("event-time").value;
 
-            // Check if the selected time slot is already occupied
-            const isTimeSlotOccupied = createdEvents.some((event) => event.start === eventDateTime);
+                
+                const eventDateTime = `${eventDate}T${eventTime}`;
 
-            if (isTimeSlotOccupied) {
-                alert("The selected time slot is already occupied by another event.");
-            } else {
-                // Create an event object
-                const event = {
-                    title: eventName,
-                    location: eventVenue,
-                    start: eventDateTime,
-                    end: eventDateTime, // You can modify this if you want to set an end time
-                };
+               
+                const isTimeSlotOccupied = createdEvents.some((event) => event.start === eventDateTime);
 
-                // Add the event to the FullCalendar and the list of created events
-                calendar.addEvent(event);
-                createdEvents.push(event);
+                if (isTimeSlotOccupied) {
+                    alert("The selected time slot is already occupied by another event.");
+                } else {
+                    
+                    const event = {
+                        title: eventName,
+                        location: eventVenue,
+                        start: eventDateTime,
+                        end: eventDateTime, 
+                    };
 
-                // Display the event details on the webpage
-                const eventDetails = document.getElementById("event-details");
-                eventDetails.innerHTML = `
+                    
+                    calendar.addEvent(event);
+                    createdEvents.push(event);
+
+                    
+                    const eventDetails = document.getElementById("event-details");
+                    eventDetails.innerHTML = `
                     <h2>Event Details</h2>
                     <p>Event Name: ${eventName}</p>
                     <p>Event Location (Venue): ${eventVenue}</p>
                     <p>Event Date: ${eventDate}</p>
                     <p>Event Time: ${eventTime}</p>
                 `;
-            }
+                }
+            });
         });
     </script>
+    <footer style="background-color: #79155B;">
+        <i class="fa-solid fa-house-user fs-sm" style="color: #ffe9e1; margin-left: 50%; height:contain;"></i>
+        <a href src="#home"></a>
+    </footer>
 </body>
+
 </html>
