@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindVendors</title>
+    <style>
+        /* Reset some default styles for better consistency */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE9E1;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #79155B;
+            text-align: center;
+        }
+
+        /* Dropdown filter styles */
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* List of items styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        /* Style for the Contact button */
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #79155B;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .contact-button:hover {
+            background-color: #a15a8c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Easy-Peasy Vendor Finder</h1>
+    <br>
+    <!-- Dropdown filters -->
+    <select id="category-filter">
+        <option value="all">All Categories</option>
+        <option value="electronics">Wedding</option>
+        <option value="clothing">Birthday</option>
+        <option value="books">Anniversary</option>
+    </select>
+
+    <select id="price-filter">
+        <option value="all">All Prices</option>
+        <option value="low">Low Price</option>
+        <option value="medium">Medium Price</option>
+        <option value="high">High Price</option>
+    </select>
+
+    <select id="location-filter">
+        <option value="all">All Locations</option>
+        <option value="new-york">Thane</option>
+        <option value="los-angeles">Mumbai</option>
+        <option value="chicago">Navi Mumbai</option>
+    </select>
+
+    <select id="rating-filter">
+        <option value="all">All Ratings</option>
+        <option value="5">5 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="3">3 Stars</option>
+    </select>
+
+    <!-- List of items (example) -->
+    <ul id="item-list">
+        <!-- Electronics Vendors -->
+        <li data-category="electronics" data-price="low" data-location="new-york" data-rating="5">
+            <h3>Vendor 1A</h3>
+            <p>Specializes in .</p>
+            <button class="contact-button" data-vendor="Vendor 1">Contact</button>
+        </li>
+        <li data-category="electronics" data-price="medium" data-location="los-angeles" data-rating="4">
+            <h3>Vendor 2A</h3>
+            <p>Offers a variety of .</p>
+            <button class="contact-button" data-vendor="Vendor 2">Contact</button>
+        </li>
+        <li data-category="electronics" data-price="high" data-location="chicago" data-rating="3">
+            <h3>Vendor 3A</h3>
+            <p>Specializes in .</p>
+            <button class="contact-button" data-vendor="Vendor 3">Contact</button>
+        </li>
+        <li data-category="electronics" data-price="medium" data-location="new-york" data-rating="4">
+            <h3>Vendor 4A </h3>
+            <p>Offers .</p>
+            <button class="contact-button" data-vendor="Vendor 4">Contact</button>
+        </li>
+        <li data-category="electronics" data-price="low" data-location="los-angeles" data-rating="5">
+            <h3>Vendor 5A </h3>
+            <p>Specializes in affordable electronics.</p>
+            <button class="contact-button" data-vendor="Vendor 5">Contact</button>
+        </li>
+
+        <!-- Clothing Vendors -->
+        <li data-category="clothing" data-price="low" data-location="new-york" data-rating="4">
+            <h3>Vendor 1B </h3>
+            <p>Offers trendy clothing options.</p>
+            <button class="contact-button" data-vendor="Vendor 1">Contact</button>
+        </li>
+        <li data-category="clothing" data-price="high" data-location="los-angeles" data-rating="5">
+            <h3>Vendor 2B </h3>
+            <p>Specializes in luxury fashion.</p>
+            <button class="contact-button" data-vendor="Vendor 2">Contact</button>
+        </li>
+        <li data-category="clothing" data-price="medium" data-location="chicago" data-rating="4">
+            <h3>Vendor 3B</h3>
+            <p>Offers a variety of clothing styles.</p>
+            <button class="contact-button" data-vendor="Vendor 3">Contact</button>
+        </li>
+        <li data-category="clothing" data-price="medium" data-location="new-york" data-rating="3">
+            <h3>Vendor 4B</h3>
+            <p>Specializes in casual wear.</p>
+            <button class="contact-button" data-vendor="Vendor 4">Contact</button>
+        </li>
+        <li data-category="clothing" data-price="low" data-location="los-angeles" data-rating="4">
+            <h3>Vendor 5B</h3>
+            <p>Offers budget-friendly clothing options.</p>
+            <button class="contact-button" data-vendor="Vendor 5">Contact</button>
+        </li>
+
+        <!-- Books Vendors -->
+        <li data-category="books" data-price="high" data-location="new-york" data-rating="5">
+            <h3>Vendor 1C</h3>
+            <p>Specializes in .</p>
+            <button class="contact-button" data-vendor="Vendor 1">Contact</button>
+        </li>
+        <li data-category="books" data-price="medium" data-location="los-angeles" data-rating="4">
+            <h3>Vendor 2C</h3>
+            <p>Offers a wide range of .</p>
+            <button class="contact-button" data-vendor="Vendor 2">Contact</button>
+        </li>
+        <li data-category="books" data-price="low" data-location="chicago" data-rating="3">
+            <h3>Vendor 3C</h3>
+            <p>Specializes in .</p>
+            <button class="contact-button" data-vendor="Vendor 3">Contact</button>
+        </li>
+        <li data-category="books" data-price="high" data-location="new-york" data-rating="5">
+            <h3>Vendor 4C</h3>
+            <p>Offers a collection of .</p>
+            <button class="contact-button" data-vendor="Vendor 4">Contact</button>
+        </li>
+        <li data-category="books" data-price="medium" data-location="los-angeles" data-rating="4">
+            <h3>Vendor 5C</h3>
+            <p>Specializes in .</p>
+            <button class="contact-button" data-vendor="Vendor 5">Contact</button>
+        </li>
+    </ul>
+
+    <script>
+        // Get references to the filter dropdowns and the item list
+        const categoryFilter = document.getElementById('category-filter');
+        const priceFilter = document.getElementById('price-filter');
+        const locationFilter = document.getElementById('location-filter');
+        const ratingFilter = document.getElementById('rating-filter');
+        const itemList = document.getElementById('item-list');
+
+        // Add event listeners to each filter
+        categoryFilter.addEventListener('change', filterItems);
+        priceFilter.addEventListener('change', filterItems);
+        locationFilter.addEventListener('change', filterItems);
+        ratingFilter.addEventListener('change', filterItems);
+
+        // Function to filter items based on selected criteria
+        function filterItems() {
+            const selectedCategory = categoryFilter.value;
+            const selectedPrice = priceFilter.value;
+            const selectedLocation = locationFilter.value;
+            const selectedRating = ratingFilter.value;
+
+            // Loop through vendor items
+            const vendorItems = itemList.querySelectorAll('li');
+            vendorItems.forEach((item) => {
+                const category = item.getAttribute('data-category');
+                const price = item.getAttribute('data-price');
+                const location = item.getAttribute('data-location');
+                const rating = item.getAttribute('data-rating');
+
+                // Check if the vendor item meets the selected criteria
+                const isCategoryMatch = selectedCategory === 'all' || selectedCategory === category;
+                const isPriceMatch = selectedPrice === 'all' || selectedPrice === price;
+                const isLocationMatch = selectedLocation === 'all' || selectedLocation === location;
+                const isRatingMatch = selectedRating === 'all' || selectedRating === rating;
+
+                if (isCategoryMatch && isPriceMatch && isLocationMatch && isRatingMatch) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Add event listeners for contact buttons
+        const contactButtons = itemList.querySelectorAll('.contact-button');
+        contactButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const vendorName = button.getAttribute('data-vendor');
+                // Replace this with the logic to handle contacting the vendor
+                alert(`Contacting ${vendorName}...`);
+            });
+        });
+    </script>
+</body>
+</html>
