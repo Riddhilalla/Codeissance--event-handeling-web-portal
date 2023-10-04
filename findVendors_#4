@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>FindVendors</title>
     <style>
-        /* Reset some default styles for better consistency */
+        
         body, h1, h2, p {
             margin: 0;
             padding: 0;
@@ -14,11 +15,10 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #FFE9E1;
-            padding: 20px;
         }
     
         h1 {
-            color: #451952;
+            color: #FFBFA9;
             text-align: center;
         }
     
@@ -51,15 +51,16 @@
     
         li {
             background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 15px;
-            padding: 10px;
-            margin: 10px 0;
-            width: calc(33.33% - 20px); /* Adjust width based on your design */
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 20px; /* Increase padding for better alignment */
+    margin: 10px 0;
+    width: calc(33.33% - 20px); /* Adjust width based on your design */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center align text content */
         }
     
         /* Style for the Contact button */
@@ -72,16 +73,17 @@
             background-color: #a15a8c;
         }
     
-        /* Style for the vendor images */
+        
         .vendor-image {
             max-width: 100%;
-            height: auto;
-            transition: transform 0.3s ease, scale 0.3s ease; /* Transitions for hover effect */
+        height: 200px; 
+        transition: transform 0.3s ease, scale 0.3s ease;
+
         }
     
-        /* Hover effect for vendor images */
+       
         .vendor-image:hover {
-            transform: translateY(-10px) scale(1.1); /* Lift and make the image bigger on hover */
+            transform: translateY(-10px) scale(1.1); 
         }
     
         .contact-button {
@@ -100,86 +102,109 @@
         .contact-button:hover {
             background-color: #a15a8c;
         }
+        
+.filter-select {
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin-right: 10px;
+    font-size: 16px; 
+    background-color: #fff; 
+    color: #451952;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-select:hover {
+    background-color: #f5f5f5; 
+}
+
     </style>
     
 </head>
 <body>
-    <h1>Easy-Peasy Vendor Finder</h1>
+    <header style="background-color: #79155B;">
+        <h1>Vendors connected to Us</h1>
+    </header>
+    
     <br>
-    <!-- Dropdown filters -->
-    <center>
-    <select id="category-filter">
+    
+<center>
+    <select id="category-filter" class="filter-select">
         <option value="all">All Categories</option>
         <option value="electronics">Wedding</option>
         <option value="clothing">Birthday</option>
         <option value="books">Anniversary</option>
+        <option value="corporate">Corporate</option> <!-- Add Corporate category -->
+    <option value="party">Party</option> <!-- Add Party category -->
     </select>
 
-    <select id="price-filter">
+    <select id="price-filter" class="filter-select">
         <option value="all">All Prices</option>
         <option value="low">Low Price</option>
         <option value="medium">Medium Price</option>
         <option value="high">High Price</option>
     </select>
 
-    <select id="location-filter">
+    <select id="location-filter" class="filter-select">
         <option value="all">All Locations</option>
         <option value="new-york">Thane</option>
         <option value="los-angeles">Mumbai</option>
         <option value="chicago">Navi Mumbai</option>
     </select>
 
-    <select id="rating-filter">
+    <select id="rating-filter" class="filter-select">
         <option value="all">All Ratings</option>
         <option value="5">5 Stars</option>
         <option value="4">4 Stars</option>
         <option value="3">3 Stars</option>
     </select>
-    </center>
-    <!-- List of items (example) -->
+</center>
+    
     <ul id="item-list">
-        <!-- Electronics Vendors -->
+        
         <li data-category="electronics" data-price="low" data-location="new-york" data-rating="5">
             <img src="https://lh3.googleusercontent.com/p/AF1QipNESxlHYPRpQ0YzDJZ43KMzXf0cHqFey0fIrK5z=s1360-w1360-h1020" alt="Vendor 1 Image" class="vendor-image">
             <h3>The Bandhan - relations for life</h3>
             <p>Wedding planner in Thane, Maharashtra</p>
-            <button class="contact-button" data-vendor="Vendor 1">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
         <li data-category="electronics" data-price="medium" data-location="los-angeles" data-rating="4">
             <img src="https://lh3.googleusercontent.com/p/AF1QipNC2VlCOzkNPvijaFxTfruebDutsMHVj0lMIUtc=s2560-w2560-h1206-rw" alt="Vendor 2 Image" class="vendor-image">
             <h3>Midaas Events</h3>
             <p>Wedding planner in Kandivali East</p>
-            <button class="contact-button" data-vendor="Vendor 2">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
         <li data-category="electronics" data-price="high" data-location="chicago" data-rating="3">
-            <img src="https://lh3.googleusercontent.com/p/AF1QipNMJBApJPhouMLIWs3qIuozEkG-tHLvK80XIulV=s2560-w2560-h1206-rw" alt="Vendor 3 Image" class="vendor-image">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipNMJBApJPhouMLIWs3qIuozEkG-tHLvK80XIulV=s2560-w2560-h1206-rw" alt="Vendor  Image" class="vendor-image">
             <h3>My Event Factory .in</h3>
             <p>Kharghar, Navi Mumbai</p>
-            <button class="contact-button" data-vendor="Vendor 3">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
-        <!-- Clothing Vendors -->
+        
         <li data-category="clothing" data-price="low" data-location="new-york" data-rating="4">
             <img src="https://lh3.googleusercontent.com/p/AF1QipMNq1kHKXDEKXCUCV_MN9uvEy78ZDeUmcYvxjD2=s1360-w1360-h1020" alt="Vendor 4 Image" class="vendor-image">
             <h3>PARTY ROCKERS</h3>
             <p>Birthday Party planners in Lokpuram,Thane.</p>
-            <button class="contact-button" data-vendor="Vendor 1">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
         <li data-category="clothing" data-price="high" data-location="los-angeles" data-rating="5">
             <img src="https://lh3.googleusercontent.com/p/AF1QipOdfngmYGARbZYwu2qXTmDzTKCAsTCSewCwrrGA=s2560-w2560-h1206-rw" alt="Vendor 5 Image" class="vendor-image">
             <h3>Eventzgraph</h3>
             <p>Specializes in luxury fashion.</p>
-            <button class="contact-button" data-vendor="Vendor 2">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
         <li data-category="clothing" data-price="medium" data-location="chicago" data-rating="4">
             <img src="https://lh3.googleusercontent.com/p/AF1QipN4Ttb0KlQa-Q0GeZMS7eSVYQeDGdE9x5E971d7=s2560-w2560-h1206-rw" alt="Vendor 6 Image" class="vendor-image">
             <h3>ASK The Event Associates</h3>
             <p>Sanpada,Navi Mumbai</p>
-            <button class="contact-button" data-vendor="Vendor 3">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
         <!-- Books Vendors -->
@@ -187,60 +212,103 @@
             <img src="https://lh3.googleusercontent.com/p/AF1QipPTANDzvnTTfA4iFEDwPW1LcnOVaEPTNoqRW82a=s1360-w1360-h1020" alt="Vendor 7 Image" class="vendor-image">
             <h3>Wedding Stories</h3>
             <p>Specializes in books.</p>
-            <button class="contact-button" data-vendor="Vendor 1">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
         <li data-category="books" data-price="medium" data-location="los-angeles" data-rating="4">
             <img src="https://lh5.googleusercontent.com/p/AF1QipP9x7aZSKsBnWocNeVbl82wfMGU45Jzz-fjLfRT=w296-h168-n-k-no" alt="Vendor 8 Image" class="vendor-image">
             <h3>Aj weeding and event</h3>
             <p>7+ years of service</p>
-            <button class="contact-button" data-vendor="Vendor 2">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
         </li>
 
         <li data-category="books" data-price="low" data-location="chicago" data-rating="3">
             <img src="https://lh5.googleusercontent.com/p/AF1QipN3FVq2HpU3hMJYJdH_c4HWbAa_oTN7YZ1A0m3v=w231-h193-n-k-no-nu" alt="Vendor 9 Image" class="vendor-image">
             <h3>A.L.S. Events - Event Planners and Organiser</h3>
             <p>10+ years in business</p>
-            <button class="contact-button" data-vendor="Vendor 3">Contact</button>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
+            
         </li>
         <!-- Add more vendors here -->
+        <!-- Corporate Vendors -->
+<li data-category="corporate" data-price="low" data-location="new-york" data-rating="5">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipPp4wsD0eiMzfBsQzShJqQslkBYrwAI4fzjbetH=s1360-w1360-h1020" alt="Vendor 9 Image" class="vendor-image">
+            <h3>Vow Events</h3>
+            <p>Corporate Event Management in Mulund</p>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
+</li>
+<li data-category="corporate" data-price="low" data-location="new-york" data-rating="5">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipP7tAyW-UjTD0pLVpk1eDDA-BxUaAK32jFYzqgU=s1360-w1360-h1020" alt="Vendor 9 Image" class="vendor-image">
+            <h3>SuperStar Events </h3>
+            <p>Best Event Management Company in Mumbai</p>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
+</li>
+<li data-category="corporate" data-price="low" data-location="new-york" data-rating="5">
+    <img src="https://lh5.googleusercontent.com/p/AF1QipMgmbYfxU60pD4WOUZtMFEvHEdkwCjiT9bMXoTK=w260-h175-n-k-no" alt="Vendor 9 Image" class="vendor-image">
+            <h3>Eventszone</h3>
+            <p>Online appointments · On-site services</p>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
+</li>
+
+
+
+<!-- Party Vendors -->
+<li data-category="party" data-price="low" data-location="new-york" data-rating="4">
+    <img src="https://lh3.googleusercontent.com/p/AF1QipPyGJx2nVIrsDxcRHZVpqgRxQdO3K1wK0DCk54H=s1360-w1360-h1020" alt="" class="vendor-image">
+            <h3>Eventzgraph</h3>
+            <p>Areas served: Khar East and nearby areas</p>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
+</li>
+<li data-category="party" data-price="low" data-location="new-york" data-rating="4">
+    <img src="https://lh5.googleusercontent.com/p/AF1QipMxjSgAaNwRcAnahZzmUqjpVRd-5NVuxVZ3l0KA=w260-h175-n-k-no" alt="Vendor 9 Image" class="vendor-image">
+            <h3>SuperStar Events</h3>
+            <p> Versova, Andheri West</p>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
+</li>
+<li data-category="party" data-price="low" data-location="new-york" data-rating="4">
+    <img src="https://lh5.googleusercontent.com/p/AF1QipNAw9nQcDbriOHfhKJ27TiDdelvR5sYD2d1e3i6=w130-h87-n-k-no" alt="Vendor 9 Image" class="vendor-image">
+            <h3>Rock The Party Event Organisers </h3>
+            <p>Online appointments · On-site services</p>
+            <a href="contactus.html"><button class="contact-button" data-vendor="Vendor ">Contact</button></a>
+</li>
+
+
     </ul>
 
     <script>
-        // Get references to the filter dropdowns and the item list
+        
         const categoryFilter = document.getElementById('category-filter');
         const priceFilter = document.getElementById('price-filter');
         const locationFilter = document.getElementById('location-filter');
         const ratingFilter = document.getElementById('rating-filter');
         const itemList = document.getElementById('item-list');
-
-        // Add event listeners to each filter
+    
         categoryFilter.addEventListener('change', filterItems);
         priceFilter.addEventListener('change', filterItems);
         locationFilter.addEventListener('change', filterItems);
         ratingFilter.addEventListener('change', filterItems);
-
-        // Function to filter items based on selected criteria
+    
+     
         function filterItems() {
             const selectedCategory = categoryFilter.value;
             const selectedPrice = priceFilter.value;
             const selectedLocation = locationFilter.value;
             const selectedRating = ratingFilter.value;
-
-            // Loop through vendor items
+    
+           
             const vendorItems = itemList.querySelectorAll('li');
             vendorItems.forEach((item) => {
                 const category = item.getAttribute('data-category');
                 const price = item.getAttribute('data-price');
                 const location = item.getAttribute('data-location');
                 const rating = item.getAttribute('data-rating');
-
-                // Check if the vendor item meets the selected criteria
+    
+           
                 const isCategoryMatch = selectedCategory === 'all' || selectedCategory === category;
                 const isPriceMatch = selectedPrice === 'all' || selectedPrice === price;
                 const isLocationMatch = selectedLocation === 'all' || selectedLocation === location;
                 const isRatingMatch = selectedRating === 'all' || selectedRating === rating;
-
+    
                 if (isCategoryMatch && isPriceMatch && isLocationMatch && isRatingMatch) {
                     item.style.display = 'block';
                 } else {
@@ -248,16 +316,20 @@
                 }
             });
         }
-
-        // Add event listeners for contact buttons
+    
+       
         const contactButtons = itemList.querySelectorAll('.contact-button');
         contactButtons.forEach((button) => {
             button.addEventListener('click', () => {
                 const vendorName = button.getAttribute('data-vendor');
-                // Replace this with the logic to handle contacting the vendor
+                
                 alert(`Contacting ${vendorName}...`);
             });
         });
     </script>
+    <footer style="background-color: #79155B;">
+        <i class="fa-solid fa-house-user fs-sm" style="color: #ffe9e1; margin-left: 50%; height:contain;"></i>
+        <a href src="#home"></a>
+    </footer>
 </body>
 </html>
