@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIBRANCE VOYAGE</title>
+    <link rel="stylesheet" href="landerpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=AR+One+Sans&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src=
+    "https://code.jquery.com/jquery-3.6.0.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+           
+            <div class="pages">
+                <ul>
+                    <a href="#">Home</a>
+                    <a href="#">Events</a>
+                    <a href="#">Contact-us</a>
+                </ul>
+            </div>
+            <div class="search">
+                <form>
+                    <input type="text" placeholder="Search...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Hello!</a>
+                    <a href="#">Notification</a>
+                    <a href="landingpage.html">Home</a>
+                    <a href="">Profile</a>
+                    <a href="faq.html">Help</a>
+                    <a href="landingpage.html">Logout</a>
+                </div>
+            </div>
+        </div>
+        <div class="images">
+            <div class="img1"><img src="lander1.jpg" ></div>
+            <div class="img2"><img src="lander2.jpg" ></div>
+            <div class="img3"><img src="lander3.jpg" ></div>
+            <div class="img4"><img src="lander4.jpg" ></div>
+            <div class="img5"><img src="lander5.jpg" ></div>
+        </div>
+        <div class="arrow left-arrow" onclick="shiftImage(-1)"><i class="fa-solid fa-arrow-left"></i></div>
+        <div class="arrow right-arrow" onclick="shiftImage(1)"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="title">
+            <span>website name</span>
+        </div>
+        
+    </div>
+    <footer>
+    
+      <div class="bottom-details">
+        <div class="bottom_text">
+          <span class="copyright_text">Copyright © 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+          <span class="policy_terms">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms & condition</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+    <script src="landerpage.js"></script>
+
+</body>
+</html>
